@@ -1,0 +1,31 @@
+.root{          /* Style für das ganze Fenster */
+    -fx-background-color: BURLYWOOD;    /* Hintergrundfarbe*/
+    -fx-border-color: BLACK;    /* Rahmenfarbe */
+    -fx-border-width: 2;    /* Rahmenbreite*/
+}
+
+.button{    /* Style für die Buttons */
+    -fx-background-color: BURLYWOOD;
+    -fx-font-size: 20;      /* Textgröße */
+    -fx-font-weight: BOLD;  /* Fettgedruckter Text */
+    -fx-border-color: BLACK;
+    -fx-border-width: 2;
+}
+
+.button:hover{      /* Style der eintritt wenn man mit der Maus über die Buttons fährt */
+    -fx-background-color: BEIGE;
+}
+
+.winnerText{    /* Style für den Gewinnertext (eigene CSS Klasse) */
+    -fx-font-size: 50;
+    -fx-font-weight: BOLD;
+}
+
+.rematch{       /* Style für den Rematchtext (auch eigene Klasse) */
+    -fx-font-size: 30;
+    -fx-font-weight: BOLD;
+}
+.slider .thumb {
+    -fx-background-image :url("http://icons.iconarchive.com/icons/double-j-design/diagram-free/128/piggy-bank-icon.png");
+    -fx-padding: 64;
+}
