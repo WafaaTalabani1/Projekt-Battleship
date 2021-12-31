@@ -38,8 +38,8 @@ public class Game {
 
     public void createMyGame(){
         root.setStyle("-fx-background-color: #021C1E");
-        player1 = new Player("Player 1", 5);
-        player2 = new Player("Player 2", 5);
+        player1 = new Player("Player 1", 10);
+        player2 = new Player("Player 2", 10);
 
         Board player1PlacingBoard = player1.getPlacingBoard();
         Board player1AttackingBoard = player1.getAttackingBoard();

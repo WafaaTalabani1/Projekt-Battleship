@@ -9,7 +9,6 @@ import javafx.scene.layout.VBox;
 
 import java.util.Objects;
 
-
 public class Board extends Parent {
     private final int HEIGHT = 10;
     private final int WIDTH = 10;
