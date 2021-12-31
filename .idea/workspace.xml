@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff05377f-c940-4e79-b527-f084f213fdd0" name="Changes" comment="" />
+    <list default="true" id="ff05377f-c940-4e79-b527-f084f213fdd0" name="Changes" comment="Projekt Battleship">
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/Board.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -182,6 +189,28 @@
       <option name="presentableId" value="Default" />
       <updated>1640639804900</updated>
     </task>
+    <task id="LOCAL-00001" summary="Projekt Battleship">
+      <created>1640980822362</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640980822362</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Projekt Battleship">
+      <created>1640981485720</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640981485720</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Projekt Battleship">
+      <created>1640981625832</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640981625832</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +223,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Projekt Battleship" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projekt Battleship" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt_battleshp$BattleShipMain.ic" NAME="BattleShipMain Coverage Results" MODIFIED="1640718754753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
