@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.Objects;
-
+e
 
 public class Board extends Parent {
     private final int HEIGHT = 10;
