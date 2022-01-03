@@ -143,31 +143,31 @@ public class Game {
         //
         slider.valueProperty().addListener((observable, oldValue, newValue) -> {
 
-            if (newValue.intValue() >= 1.0 && newValue.intValue() <= 1.4) {//mit 1,5 wird aufgerundet
+            if (newValue.doubleValue() >= 1.0 && newValue.doubleValue()<= 1.4) {//mit 1,5 wird aufgerundet
                 player1.setShipSize(1);
                 player2.setShipSize(1);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
             }
-            else if (newValue.intValue() >= 1.5 && newValue.intValue() <= 2.4) {
+            else if (newValue.doubleValue() >= 1.5 && newValue.doubleValue() <= 2.4) {
                 player1.setShipSize(2);
                 player2.setShipSize(2);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
             }
-            else if (newValue.intValue() >= 2.5 && newValue.intValue() <= 3.4)  {
+            else if (newValue.doubleValue() >= 2.5 && newValue.doubleValue() <= 3.4)  {
                 player1.setShipSize(3);
                 player2.setShipSize(3);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
             }
-            else if (newValue.intValue() >= 3.5 && newValue.intValue() <= 4.4)  {
+            else if (newValue.doubleValue() >= 3.5 && newValue.doubleValue() <= 4.4)  {
                 player1.setShipSize(4);
                 player2.setShipSize(4);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
             }
-            else if (newValue.intValue() >= 4.5 && newValue.intValue() <= 5){
+            else if (newValue.doubleValue() >= 4.5 && newValue.doubleValue() <= 5){
                 player1.setShipSize(5);
                 player2.setShipSize(5);
                 System.out.println(newValue);
