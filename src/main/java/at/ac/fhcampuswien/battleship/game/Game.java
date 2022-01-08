@@ -35,8 +35,7 @@ public class Game {
     }
 
 
-
-    public void createMyGame(){
+    public void createMyGame() {
         root.setStyle("-fx-background-color: #021C1E");
         player1 = new Player("Player 1", 10);
         player2 = new Player("Player 2", 10);
@@ -52,24 +51,24 @@ public class Game {
 
 
         /*Adding the event handler to all cells of both players' boards*/
-        for (int i = 0; i  < 10; i++){
-            for (int j = 0; j < 10; j++){
-                player1PlacingBoard.getCell(i,j).clickDetectOnPlacingBoard(this);
-                player1PlacingBoard.getCell(i,j).enteredDetectPlacingBoard(this);
-                player1PlacingBoard.getCell(i,j).exitedDetectPlacingBoard(this);
-                player1AttackingBoard.getCell(i,j).clickDetectOnAttackingBoard(this);
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                player1PlacingBoard.getCell(i, j).clickDetectOnPlacingBoard(this);
+                player1PlacingBoard.getCell(i, j).enteredDetectPlacingBoard(this);
+                player1PlacingBoard.getCell(i, j).exitedDetectPlacingBoard(this);
+                player1AttackingBoard.getCell(i, j).clickDetectOnAttackingBoard(this);
 
-                player2PlacingBoard.getCell(i,j).clickDetectOnPlacingBoard(this);
-                player2PlacingBoard.getCell(i,j).enteredDetectPlacingBoard(this);
-                player2PlacingBoard.getCell(i,j).exitedDetectPlacingBoard(this);
-                player2AttackingBoard.getCell(i,j).clickDetectOnAttackingBoard(this);
+                player2PlacingBoard.getCell(i, j).clickDetectOnPlacingBoard(this);
+                player2PlacingBoard.getCell(i, j).enteredDetectPlacingBoard(this);
+                player2PlacingBoard.getCell(i, j).exitedDetectPlacingBoard(this);
+                player2AttackingBoard.getCell(i, j).clickDetectOnAttackingBoard(this);
             }
         }
 
-        if(gameCount % 2 == 0) {        // Bedingung die bestimmt, welcher Spieler nach dem Neustart dran ist
+        if (gameCount % 2 == 0) {        // Bedingung die bestimmt, welcher Spieler nach dem Neustart dran ist
             activePlayer = player1;     // (immer abwechseld player1 dann player2)
             player1.setTurn(true);
-        } else{
+        } else {
             activePlayer = player2;
             player2.setTurn(true);
         }
@@ -77,7 +76,6 @@ public class Game {
 
         hbox = new HBox(60, shipSizeSlider(), radioButtons());
         hbox.setAlignment(Pos.CENTER);
-        //hbox.setPadding(new Insets(0, 10, 2, 50));
         root.setCenter(hbox);
 
         player1Text = new Text(player1.getName());
@@ -94,14 +92,14 @@ public class Game {
         hbox2.setAlignment(Pos.TOP_CENTER);
         hbox2.setPadding(new Insets(10, 100, 20, 50));
 
-        root.setPrefSize(500,750);
+        root.setPrefSize(500, 750);
         root.setTop(hbox1);
         root.setBottom(hbox2);
         showTurn();
 
     }
 
-    private VBox radioButtons(){
+    private VBox radioButtons() {
         vertical = new RadioButton("Vertical");
         vertical.setStyle("-fx-padding: 5; -fx-text-fill:#6FB98F; -fx-font-size: 12");
 
@@ -112,7 +110,7 @@ public class Game {
         RadioButton horizontal = new RadioButton("Horizontal");
         horizontal.setStyle("-fx-padding: 5; -fx-text-fill:#6FB98F; -fx-font-size: 12");
 
-        VBox vBox = new VBox(10,vertical,horizontal);
+        VBox vBox = new VBox(10, vertical, horizontal);
         ToggleGroup toggleGroup = new ToggleGroup();
 
         // adding the radio buttons to the toggle group
@@ -124,10 +122,11 @@ public class Game {
         return vBox;
     }
 
-    /**Method that creates the slider and adds a listener to assign
+    /**
+     * Method that creates the slider and adds a listener to assign
      * the changes to shipSize variable in the Player Object
-     * */
-    private Slider shipSizeSlider(){
+     */
+    private Slider shipSizeSlider() {
         Slider slider = new Slider();
         slider.setMin(1);
         slider.setMax(5);
@@ -138,36 +137,32 @@ public class Game {
         slider.setStyle(" -fx-padding: 10px;-fx-font-size: 15;-fx-text-fill:#6FB98F ");
 
         slider.setBlockIncrement(1);
-        player1.setShipSize((int)slider.getValue());
-        player2.setShipSize((int)slider.getValue());
+        player1.setShipSize((int) slider.getValue());
+        player2.setShipSize((int) slider.getValue());
         //
         slider.valueProperty().addListener((observable, oldValue, newValue) -> {
 
-            if (newValue.doubleValue() >= 1.0 && newValue.doubleValue()<= 1.4) {//mit 1,5 wird aufgerundet
+            if (newValue.doubleValue() >= 1.0 && newValue.doubleValue() <= 1.4) {//mit 1,5 wird aufgerundet
                 player1.setShipSize(1);
                 player2.setShipSize(1);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
-            }
-            else if (newValue.doubleValue() >= 1.5 && newValue.doubleValue() <= 2.4) {
+            } else if (newValue.doubleValue() >= 1.5 && newValue.doubleValue() <= 2.4) {
                 player1.setShipSize(2);
                 player2.setShipSize(2);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
-            }
-            else if (newValue.doubleValue() >= 2.5 && newValue.doubleValue() <= 3.4)  {
+            } else if (newValue.doubleValue() >= 2.5 && newValue.doubleValue() <= 3.4) {
                 player1.setShipSize(3);
                 player2.setShipSize(3);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
-            }
-            else if (newValue.doubleValue() >= 3.5 && newValue.doubleValue() <= 4.4)  {
+            } else if (newValue.doubleValue() >= 3.5 && newValue.doubleValue() <= 4.4) {
                 player1.setShipSize(4);
                 player2.setShipSize(4);
                 System.out.println(newValue);
                 System.out.println(player1.getShipSize());
-            }
-            else if (newValue.doubleValue() >= 4.5 && newValue.doubleValue() <= 5){
+            } else if (newValue.doubleValue() >= 4.5 && newValue.doubleValue() <= 5) {
                 player1.setShipSize(5);
                 player2.setShipSize(5);
                 System.out.println(newValue);
@@ -180,41 +175,43 @@ public class Game {
     }
 
 
-    private StackPane coveredBoard(Board boardToCover){
+    private StackPane coveredBoard(Board boardToCover) {
         ImageView imageView1 = boardToCover.getImageView1();
         return new StackPane(boardToCover, imageView1);
     }
 
-    void redrawContent(){
+    void redrawContent() {
         root.getChildren().clear();
         gameCount++;
         createMyGame();
     }
 
-    boolean canPlaceShip__(Player player, Ship ship, BoardCell cell){
+    boolean canPlaceShip__(Player player, Ship ship, BoardCell cell) {
         int col = cell.getx();
         int row = cell.gety();
 
         /*Check to keep the ships inside the board*/
         if (row + ship.getShipSize() > player.getPlacingBoard().getHEIGHT() && ship.isVertical() ||
-           (col + ship.getShipSize() > player.getPlacingBoard().getHEIGHT() && !ship.isVertical())){
+                (col + ship.getShipSize() > player.getPlacingBoard().getHEIGHT() && !ship.isVertical())) {
             return false;
         }
         if (ship.isVertical())
-            return checkBasedOnOrientation(player, ship ,col ,row);
+            return checkBasedOnOrientation(player, ship, col, row);
         if (!ship.isVertical())
             return checkBasedOnOrientation(player, ship, row, col);
 
         return false;
     }
 
-    /**This method is called to check if the cells are occupied or not */
-    private boolean checkBasedOnOrientation(Player player, Ship ship, int x, int y){
-        for (int i = y; i < (y + ship.getShipSize()); i++){
-            if (player.getPlacingBoard().isValidPoint(x,i)){
+    /**
+     * This method is called to check if the cells are occupied or not
+     */
+    private boolean checkBasedOnOrientation(Player player, Ship ship, int x, int y) {
+        for (int i = y; i < (y + ship.getShipSize()); i++) {
+            if (player.getPlacingBoard().isValidPoint(x, i)) {
                 BoardCell currentBoardCell;
-                if (ship.isVertical()) currentBoardCell = player.getPlacingBoard().getCell(x,i);
-                else currentBoardCell = player.getPlacingBoard().getCell(i,x);
+                if (ship.isVertical()) currentBoardCell = player.getPlacingBoard().getCell(x, i);
+                else currentBoardCell = player.getPlacingBoard().getCell(i, x);
 
                 if (currentBoardCell.isOccupied())
                     return false;
@@ -223,59 +220,59 @@ public class Game {
         return true;
     }
 
-    Ship createShip(int shipSize, boolean vertical){
+    Ship createShip(int shipSize, boolean vertical) {
         return new Ship(shipSize, vertical);
     }
 
-    Ship createShipForPlayer(Player player, int shipSize, boolean vertical){
+    Ship createShipForPlayer(Player player, int shipSize, boolean vertical) {
         Ship ship = new Ship(shipSize, vertical);
         player.getShips().add(ship);
         return ship;
     }
 
 
-    void placeShipForPlayer(Player player, Ship ship, BoardCell cell){
+    void placeShipForPlayer(Player player, Ship ship, BoardCell cell) {
         int row = cell.getx();
         int col = cell.gety();
 
         if (ship.isVertical()) {
             for (int i = col; i < (col + ship.getShipSize()); i++) {
-                managePlacing(player,ship,i,row);
+                managePlacing(player, ship, i, row);
             }
-        }
-        else {
+        } else {
             for (int i = row; i < (row + ship.getShipSize()); i++) {
-                managePlacing(player,ship,col,i);
+                managePlacing(player, ship, col, i);
             }
         }
-        player.setShipsToPlace(player.getShipsToPlace()-1);
+        player.setShipsToPlace(player.getShipsToPlace() - 1);
     }
 
-    private void managePlacing(Player player, Ship ship, int col, int row){
+    private void managePlacing(Player player, Ship ship, int col, int row) {
         BoardCell currentCell = player.getPlacingBoard().getCell(row, col);
         BoardCell currentCellOnAttackingBoard = player.getAttackingBoard().getCell(row, col);
         currentCell.setOccupied(true);
         currentCellOnAttackingBoard.setOccupied(true);
         ship.getShipCells().add(currentCellOnAttackingBoard);
-        currentCell.setFill(Color.WHITE);
+        currentCell.setFill(Color.DARKGREEN);
     }
 
 
-    /**Method that gets called when a player the attacking board of the second player
+    /**
+     * Method that gets called when a player the attacking board of the second player
      * if the cell is occupied the cell will be black otherwise cell will be gold
      * and the corresponding ship that contains this cell will be fetched from this
      * player ships!
-     * */
-    boolean hit(Player player, BoardCell cell){
+     */
+    boolean hit(Player player, BoardCell cell) {
         cell.setWasShot(true);
         if (!cell.isOccupied()) {
-            cell.setFill(Color.BLACK);
+            cell.setFill(Color.CORNFLOWERBLUE);
             return false;
-        }else {
+        } else {
             for (Ship ship : player.getShips()) {
                 for (BoardCell currentCell : ship.getShipCells()) {
                     if (currentCell.equals(cell)) {
-                        cell.setFill(Color.GOLD);
+                        cell.setFill(Color.GOLDENROD);
                         ship.hit();
                         if (!ship.isAlive()) {
                             shipDestroyed(player, ship);
@@ -288,37 +285,40 @@ public class Game {
         }
     }
 
-
-    /**Method that removes the destroyed ship from the player ships and
-     *  calls the game over function if all the ships of the player are destroyed
+    /**
+     * Method that removes the destroyed ship from the player ships and
+     * calls the game over function if all the ships of the player are destroyed
+     *
      * @param player : the player whose ship got hit
-     * @param ship : the ship that got destroyed
-     *  */
+     * @param ship   : the ship that got destroyed
+     */
     private void shipDestroyed(Player player, Ship ship) {
         player.getShips().remove(ship);
-        if (player.getShips().size() == 0 ){
+        if (player.getShips().size() == 0) {
             gameOver(player);
         }
     }
 
 
-    void newActivePlayer(){
-        if (player1.isTurn()){
+    void newActivePlayer() {
+        if (player1.isTurn()) {
             activePlayer = player2;
             player1.setTurn(false);
             player2.setTurn(true);
-        }else{
+        } else {
             activePlayer = player1;
             player1.setTurn(true);
             player2.setTurn(false);
         }
     }
 
-    /**Method that makes the name of the current player green!*/
+    /**
+     * Method that makes the name of the current player green!
+     */
     public void showTurn() {
-        if (player1.isTurn()){
+        if (player1.isTurn()) {
             changeTextColor(player1Text, player2Text);
-        }else{
+        } else {
             changeTextColor(player2Text, player1Text);
         }
     }
@@ -329,15 +329,15 @@ public class Game {
         player1Text.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         player2Text.setFill(Color.BLACK);
         player2Text.setStyle("-fx-effect: dropshadow(three-pass-box, green, 0, 0, 0, 0);");
-        player2Text.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        player2Text.setFont(Font.font("Arial" , FontWeight.BOLD, 20));
     }
 
 
-    private void gameOver(Player loser){
+    private void gameOver(Player loser) {
         GameOver dialog;
         if (loser == player1) {
             dialog = new GameOver(player2.getName(), primaryStage);
-        }else {
+        } else {
             dialog = new GameOver(player1.getName(), primaryStage);
         }
         dialog.drawDialog(this);
@@ -345,49 +345,50 @@ public class Game {
     }
 
 
-    void changeColorOnHover(Player player, Ship ship, BoardCell cell, String color, String color1){
+    void changeColorOnHover(Player player, Ship ship, BoardCell cell, String color, String color1) {
 
         int col = cell.getx();
         int row = cell.gety();
 
         /*check to see if the ship fits in the specified place!
-        * if so .. check to see if the ship is vertical or horizontal*/
-        if (canPlaceShip__(player,ship,cell)){
+         * if so .. check to see if the ship is vertical or horizontal*/
+        if (canPlaceShip__(player, ship, cell)) {
             // if the ship is vertical start counting from its starting row and down!
             if (ship.isVertical()) {
-                for (int i = row; i < (row + ship.getShipSize()); i++){
+                for (int i = row; i < (row + ship.getShipSize()); i++) {
                     BoardCell currentCell = player.getPlacingBoard().getCell(col, i);
                     currentCell.setStyle(color);
                 }
             }
             //if the ship is horizontal, start counting from its starting column and right!
             else {
-                for (int i = col; i < (col + ship.getShipSize()); i++){
+                for (int i = col; i < (col + ship.getShipSize()); i++) {
                     BoardCell currentCell = player.getPlacingBoard().getCell(i, row);
                     currentCell.setStyle(color);
                 }
             }
         }
         /*same process in case the ship does not fit on the board...
-        * check if the ship is vertical or horizontal and give the cells red color accordingly  */
-        else{
-            if (ship.isVertical()){
-                for (int i = row; i < (row + ship.getShipSize()); i++){
+         * check if the ship is vertical or horizontal and give the cells red color accordingly  */
+        else {
+            if (ship.isVertical()) {
+                for (int i = row; i < (row + ship.getShipSize()); i++) {
                     // try-catch block for the case when the cell is out of the board (>9)
                     try {
-                       BoardCell currentCell = player.getPlacingBoard().getCell(col, i);
+                        BoardCell currentCell = player.getPlacingBoard().getCell(col, i);
                         if (!currentCell.isOccupied())
                             currentCell.setStyle(color1);
-                    }catch (IndexOutOfBoundsException ignored){}
+                    } catch (IndexOutOfBoundsException ignored) {
+                    }
                 }
-            }
-            else{
-                for (int i = col; i < (col + ship.getShipSize()); i++){
+            } else {
+                for (int i = col; i < (col + ship.getShipSize()); i++) {
                     try {
                         BoardCell currentCell = player.getPlacingBoard().getCell(i, row);
                         if (!currentCell.isOccupied())
                             currentCell.setStyle(color1);
-                    }catch (IndexOutOfBoundsException ignored){}
+                    } catch (IndexOutOfBoundsException ignored) {
+                    }
                 }
             }
         }
@@ -402,12 +403,12 @@ public class Game {
         return root;
     }
 
-    Player getTheSecondPlayer(){
+    Player getTheSecondPlayer() {
         if (activePlayer == player1) return player2;
         else return player1;
     }
 
-    public void removeButtons(){
+    public void removeButtons() {
         root.getChildren().remove(hbox);
     }
 
@@ -416,7 +417,8 @@ public class Game {
         return player1;
     }
 
-    public void setButtonToVertical(){
+    //
+    public void setButtonToVertical() {
         vertical.setSelected(true);
     }
 }
