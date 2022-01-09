@@ -22,7 +22,7 @@ public class Board extends Parent {
     Board(String name) {
         this.name = name;
         //giving the board shadow effect
-        this.setStyle("-fx-effect: dropshadow(three-pass-box, cadetblue, 20, 0, 0, 15);");
+        this.setStyle("-fx-effect: dropshadow(three-pass-box, chartreuse, 20, 0, 0, 15);");
         initializeImageView();
         for (int y = 0; y < HEIGHT; y++) {
             HBox row = new HBox();
