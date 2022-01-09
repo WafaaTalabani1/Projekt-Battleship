@@ -43,7 +43,7 @@ public class Board extends Parent {
         imageView1.setStyle("-fx-effect: dropshadow(three-pass-box, chocolate, 30, 0, 0, 15);");
     }
 
-    BoardCell getCell(int x, int y) {                // auf einzelne Zellen zugreifen
+    BoardCell getCell(int x, int y) {                // auf einzelne Zellen zugreifen??
         return (BoardCell) ((HBox) rows.getChildren().get(y)).getChildren().get(x);
 
     }

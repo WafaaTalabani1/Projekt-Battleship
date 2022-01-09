@@ -5,13 +5,10 @@ import javafx.scene.Parent;
 import java.util.ArrayList;
 
 class Ship extends Parent {
-
     /*length of ship*/
     private final int shipSize;
-
     /*orientation of ship*/
     private final boolean vertical;
-
     /*list that holds the cells on which the ship exists*/
     private final ArrayList<BoardCell> shipBoardCells;
     private int health;

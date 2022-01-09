@@ -4,25 +4,22 @@ import java.util.ArrayList;
 
 class Player {
 
-    private String name;
-    private Board placingBoard;
-    private Board attackingBoard;
+    private final String name;
+    private final Board placingBoard;
+    private final Board attackingBoard;
     private boolean turn;
-
-    private ArrayList<Ship> ships;
-
+    private final ArrayList<Ship> ships;//??
     /*to keep track of how many ships each player has already placed*/
     private int shipsToPlace;
-
     /*to keep track of the size of each ship the player places*/
     private int shipSize;
     private boolean vertical = true;
 
-    Player(String name, int shipsToPlace){
-        this.name  = name;
-        if (shipsToPlace > 0){
+    Player(String name, int shipsToPlace) {
+        this.name = name;
+        if (shipsToPlace > 0) {
             this.shipsToPlace = shipsToPlace;
-        }else{
+        } else {
             throw new IllegalArgumentException("Player has to place at least one Ship!");
         }
         placingBoard = new Board(name);
@@ -62,7 +59,6 @@ class Player {
         this.turn = turn;
     }
 
-
     int getShipSize() {
         return shipSize;
     }
@@ -78,4 +74,6 @@ class Player {
     void setVertical(boolean vertical) {
         this.vertical = vertical;
     }
+
+
 }

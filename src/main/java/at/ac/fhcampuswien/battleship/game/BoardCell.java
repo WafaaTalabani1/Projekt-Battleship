@@ -83,7 +83,7 @@ class BoardCell extends Rectangle {
                         if (game.canPlaceShip__(currentPlayer,ship, currentBoardCell)){
                             game.placeShipForPlayer(currentPlayer,ship, currentBoardCell);
                         }
-                        if (currentPlayer.getShipsToPlace() == 0){
+                        if (currentPlayer.getShipsToPlace() == 0){//??
                             if (secondPlayer.getShipsToPlace() == 0){
                                 game.removeButtons();
                             }
@@ -111,7 +111,7 @@ class BoardCell extends Rectangle {
                         if (!currentBoardCell.board.getName().equals(currentPlayer.getPlacingBoard().getName())){
                             if (!currentBoardCell.isWasShot()){
                                 boolean b = game.hit(secondPlayer, currentBoardCell);
-                                System.out.println(currentPlayer.getName());
+                                System.out.println(currentPlayer.getName() + " ist dran");
                                 if (!b) {
                                     game.newActivePlayer();
                                     game.showTurn();
