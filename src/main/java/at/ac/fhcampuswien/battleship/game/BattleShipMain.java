@@ -2,6 +2,7 @@ package at.ac.fhcampuswien.battleship.game;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class BattleShipMain extends Application {
@@ -13,6 +14,7 @@ public class BattleShipMain extends Application {
         game.createMyGame();
 
         Scene scene = new Scene(game.getRoot());
+        primaryStage.getIcons().add(new Image("file:src/main/resources/images/img.png"));
         primaryStage.setTitle("Battleship");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
