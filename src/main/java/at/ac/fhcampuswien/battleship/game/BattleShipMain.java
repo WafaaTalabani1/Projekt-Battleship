@@ -14,7 +14,7 @@ public class BattleShipMain extends Application {
         game.createMyGame();
 
         Scene scene = new Scene(game.getRoot());
-        primaryStage.getIcons().add(new Image("file:src/main/resources/images/img.png"));
+        primaryStage.getIcons().add(new Image("file:src/main/resources/image/img.png"));
         primaryStage.setTitle("Battleship");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
