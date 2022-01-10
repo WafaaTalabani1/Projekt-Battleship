@@ -33,7 +33,7 @@ set APP_HOME=%DIRNAME%..
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 
 @rem Add default JVM options here. You can also use JAVA_OPTS and PROJEKT_BATTLESHP_OPTS to pass JVM options to this script.
-set DEFAULT_JVM_OPTS="--module-path" "%APP_HOME%\lib" "--module" "at.ac.fhcampuswien.projektbattleshp/at.ac.fhcampuswien.projektbattleshp.Game.BattleShipMain"
+set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
@@ -67,11 +67,11 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=
-set MODULE_PATH=
+set CLASSPATH=%APP_HOME%\lib\projekt-battleshp-1.0-SNAPSHOT.jar;%APP_HOME%\lib\javafx-fxml-11.0.2-win.jar;%APP_HOME%\lib\javafx-web-11.0.2-win.jar;%APP_HOME%\lib\javafx-controls-11.0.2-win.jar;%APP_HOME%\lib\javafx-controls-11.0.2.jar;%APP_HOME%\lib\javafx-media-11.0.2-win.jar;%APP_HOME%\lib\javafx-media-11.0.2.jar;%APP_HOME%\lib\javafx-graphics-11.0.2-win.jar;%APP_HOME%\lib\javafx-graphics-11.0.2.jar;%APP_HOME%\lib\javafx-base-11.0.2-win.jar;%APP_HOME%\lib\javafx-base-11.0.2.jar
+
 
 @rem Execute projekt-battleshp
-"%JAVA_EXE%" %JAVA_OPTS% %PROJEKT_BATTLESHP_OPTS% %DEFAULT_JVM_OPTS% %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %PROJEKT_BATTLESHP_OPTS%  -classpath "%CLASSPATH%" at.ac.fhcampuswien.battleship.game.BattleShipMain %*
 
 :end
 @rem End local scope for the variables with windows NT shell
