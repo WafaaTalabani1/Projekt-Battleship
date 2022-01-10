@@ -36,7 +36,7 @@ public class Game {
 
 
     public void createMyGame() {
-        root.setStyle("-fx-background-color: #D3D3D3");
+        root.setStyle("-fx-background-color: #021C1E");
         player1 = new Player("Player 1", 10);
         player2 = new Player("Player 2", 10);
 
