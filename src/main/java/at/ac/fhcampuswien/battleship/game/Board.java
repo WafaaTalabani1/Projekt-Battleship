@@ -9,21 +9,21 @@ import javafx.scene.layout.VBox;
 
 import java.util.Objects;
 
-public class Board extends Parent {
-    private final int HEIGHT = 10;
-    private final int WIDTH = 10;
-    private final String name;
-    private boolean covered;
-    private Image wave1;
-    private ImageView imageView1;
-    private final VBox rows = new VBox();
+public class Board extends Parent { // Wo ist Parent, was steht in Parent drinnen ?
+    private final int HEIGHT = 10; //nicht änderbare Höhe definiert --> 10*10 Feld
+    private final int WIDTH = 10;  //nicht änderbare definierte Breite
+    private final String name; //Wenn name eingegeben wird nicht änderbar mitten in der Ausführung
+    private boolean covered; //eine boolean Variable "covered" für das Bild, welches das Spielfeld überdecken wird
+    private Image wave1; //Eine Variable für das Foto
+    private ImageView imageView1; //Eine ImageView Variable wo wave1 aufgerufen wird
+    private final VBox rows = new VBox(); //Neues Objekt wird erstellt der Klasse VBox mit Namen "rows"
 
 
-    Board(String name) {
-        this.name = name;
+    Board(String name) { //Konstruktor "default"
+        this.name = name; //Name wird übergeben
         //giving the board shadow effect
-        this.setStyle("-fx-effect: dropshadow(three-pass-box, chartreuse, 20, 0, 0, 15);");
-        initializeImageView();
+        this.setStyle("-fx-effect: dropshadow(three-pass-box, chartreuse, 20, 0, 0, 15);"); //shadow vom Spielfeld
+        initializeImageView(); //Methode wird aufgerufen von weiter unten
         for (int y = 0; y < HEIGHT; y++) {
             HBox row = new HBox();
             for (int x = 0; x < WIDTH; x++) {

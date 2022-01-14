@@ -1,4 +1,4 @@
-.root{          /* Style für das ganze Fenster */
+.root{          /* Style für das ganze Fenster, primary stage */
     -fx-background-color: BURLYWOOD;    /* Hintergrundfarbe*/
     -fx-border-color: BLACK;    /* Rahmenfarbe */
     -fx-border-width: 2;    /* Rahmenbreite*/
