@@ -20,7 +20,7 @@ public class BattleShipMain extends Application { //BatleShipMain ist Subklasse 
         Scene scene = new Scene(game.getRoot()); //Objekt der Klasse Scene erstellt, welches das den getter "root" aufruft.
         // im "root" haben wir die Buttons, Texte, genaue Positionierung unserer HBoxen in der Klasse "Game"
 
-        primaryStage.getIcons().add(new Image("file:src/main/resources/image/img_3.png")); //Im primaryStage wird die Funktion getIcons(javafx) aufgerufen,
+        primaryStage.getIcons().add(new Image("file:src/main/resources/image/img_4.png")); //Im primaryStage wird die Funktion getIcons(javafx) aufgerufen,
         // und ein Foto hinzugefügt, dass unser Spielfeld abdeckt nach setzen der Schiffe
 
 
