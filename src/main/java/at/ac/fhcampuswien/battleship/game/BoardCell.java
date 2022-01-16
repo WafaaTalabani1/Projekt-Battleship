@@ -29,10 +29,10 @@ class BoardCell extends Rectangle {
      * otherwise red
      * */
     void enteredDetectPlacingBoard(Game game){
-        this.setOnMouseEntered(mouseEvent -> {
+        this.setOnMouseEntered(mouseEvent -> {//diese Methode ist von der abstracte klasse Node
             if (game.getActivePlayer() != null) {
                 Player currentPlayer = game.getActivePlayer();
-                if (currentPlayer.getShipsToPlace() > 0){
+                if (currentPlayer.getShipsToPlace() > 0){//wird aufgerufen wenn die nicht alle Schiffe plaziert sind
                     BoardCell currentBoardCell = (BoardCell) mouseEvent.getSource();
                     /*if statement to allow each player to place ships only on his placing board*/
                     if (currentBoardCell.board.getName().equals(currentPlayer.getPlacingBoard().getName())){
@@ -77,13 +77,13 @@ class BoardCell extends Rectangle {
                 Player currentPlayer = game.getActivePlayer();
                 Player secondPlayer = game.getTheSecondPlayer();
                 if (currentPlayer.getShipsToPlace() > 0 ){
-                    BoardCell currentBoardCell = (BoardCell) mouseEvent.getSource();
-                    if (currentBoardCell.board.getName().equals(currentPlayer.getPlacingBoard().getName())){//?
+                    BoardCell currentBoardCell = (BoardCell) mouseEvent.getSource();//welche Qeulle hat das event ausgelöst in dem Fall boardcell
+                    if (currentBoardCell.board.getName().equals(currentPlayer.getPlacingBoard().getName())){//hier darf der spieler nur in seinem placingboard die schiffe platzieren
                         Ship ship = game.createShipForPlayer(currentPlayer,currentPlayer.getShipSize(), currentPlayer.isVertical());
-                        if (game.canPlaceShip__(currentPlayer,ship, currentBoardCell)){
+                        if (game.canPlaceShip__(currentPlayer,ship, currentBoardCell)){//wenn das schiff in diesem platz passt ,darf diesem schiff platziert werden
                             game.placeShipForPlayer(currentPlayer,ship, currentBoardCell);
                         }
-                        if (currentPlayer.getShipsToPlace() == 0){//??
+                        if (currentPlayer.getShipsToPlace() == 0){//
                             if (secondPlayer.getShipsToPlace() == 0){
                                 game.removeButtons();
                             }
@@ -163,5 +163,5 @@ class BoardCell extends Rectangle {
     @Override
     public int hashCode() {
         return Objects.hash(x, y, wasShot, occupied, board);
-    }
+    }//errechnet mein hashcode
 }
