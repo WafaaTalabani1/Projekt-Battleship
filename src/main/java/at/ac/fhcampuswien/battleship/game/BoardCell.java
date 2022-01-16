@@ -19,8 +19,8 @@ class BoardCell extends Rectangle {
         this.x = x;
         this.y = y;
         this.board = board;
-        setStyle("-fx-fill: #317f43");
-        setStroke(Color.BLACK);
+        setStyle("-fx-fill: #317f43"); //Farbe der Boardcell
+        setStroke(Color.BLACK); //Ränder der Farbe
     }
 
     /**
@@ -87,7 +87,7 @@ class BoardCell extends Rectangle {
                             if (secondPlayer.getShipsToPlace() == 0){
                                 game.removeButtons();
                             }
-                            currentPlayer.getPlacingBoard().setImageVisibility(true);
+                            currentPlayer.getPlacingBoard().setImageVisibility(true); //Bild wird sichtbar, überdeckt Feld
                             game.newActivePlayer();
                             game.showTurn();
                             game.setButtonToVertical();

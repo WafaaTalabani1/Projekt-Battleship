@@ -9,14 +9,14 @@ import javafx.scene.layout.VBox;
 
 import java.util.Objects;
 
-public class Board extends Parent { // Wo ist Parent, was steht in Parent drinnen ?
-    private final int HEIGHT = 10; //nicht änderbare Höhe definiert --> 10*10 Feld
-    private final int WIDTH = 10;  //nicht änderbare definierte Breite
-    private final String name; //Wenn name eingegeben wird nicht änderbar mitten in der Ausführung
-    private boolean covered; //eine boolean Variable "covered" für das Bild, welches das Spielfeld überdecken wird
-    private Image wave1; //Eine Variable für das Foto
-    private ImageView imageView1; //Eine ImageView Variable wo wave1 aufgerufen wird
-    private final VBox rows = new VBox(); //Neues Objekt wird erstellt der Klasse VBox mit Namen "rows"
+    public class Board extends Parent { // Wo ist Parent, was steht in Parent drinnen ?
+        private final int HEIGHT = 10; //nicht änderbare Höhe definiert --> 10*10 Feld
+        private final int WIDTH = 10;  //nicht änderbare definierte Breite
+        private final String name; //Wenn name eingegeben wird nicht änderbar mitten in der Ausführung
+        private boolean covered; //eine boolean Variable "covered" für das Bild, welches das Spielfeld überdecken wird
+        private Image wave1; //Eine Variable für das Foto
+        private ImageView imageView1; //Eine ImageView Variable wo wave1 aufgerufen wird
+        private final VBox rows = new VBox(); //Neues Objekt wird erstellt der Klasse VBox mit Namen "rows"
 
 
     Board(String name) { //Konstruktor "default"
@@ -25,7 +25,7 @@ public class Board extends Parent { // Wo ist Parent, was steht in Parent drinne
         this.setStyle("-fx-effect: dropshadow(three-pass-box, chartreuse, 20, 0, 0, 15);"); //shadow vom Spielfeld
         initializeImageView(); //Methode wird aufgerufen von weiter unten
         for (int y = 0; y < HEIGHT; y++) {
-            HBox row = new HBox();
+            HBox row = new HBox(); //HBox = Horizontale Boxen
             for (int x = 0; x < WIDTH; x++) {
                 BoardCell c = new BoardCell(x, y, this);
                 row.getChildren().add(c);
@@ -43,7 +43,7 @@ public class Board extends Parent { // Wo ist Parent, was steht in Parent drinne
         imageView1.setStyle("-fx-effect: dropshadow(three-pass-box, chocolate, 30, 0, 0, 15);");
     }
 
-    BoardCell getCell(int x, int y) {                // auf einzelne Zellen zugreifen??
+    BoardCell getCell(int x, int y) {                //auf einzelne Zellen zugreifen
         return (BoardCell) ((HBox) rows.getChildren().get(y)).getChildren().get(x);
 
     }
@@ -64,7 +64,7 @@ public class Board extends Parent { // Wo ist Parent, was steht in Parent drinne
         return imageView1;
     }
 
-    void setImageVisibility(boolean visibility){
+    void setImageVisibility(boolean visibility){ //Damit Bild nicht direkt angezeigt wird, erst später dann
         imageView1.setVisible(visibility);
         covered = visibility;
     }
@@ -74,7 +74,7 @@ public class Board extends Parent { // Wo ist Parent, was steht in Parent drinne
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) { //Vergleich zweier Objekte
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Board board = (Board) o;

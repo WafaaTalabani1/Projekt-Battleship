@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class BattleShipMain extends Application {
+public class BattleShipMain extends Application { //BatleShipMain ist Subklasse der Application
 
 
     public void start(Stage primaryStage){

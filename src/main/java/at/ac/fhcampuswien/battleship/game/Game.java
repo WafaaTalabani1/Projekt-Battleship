@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 public class Game {
 
-    private final BorderPane root = new BorderPane();
+    private final BorderPane root = new BorderPane(); //Layoutklasse
     private final Stage primaryStage;
     private Player player1;
     private Player player2;
@@ -36,7 +36,7 @@ public class Game {
 
 
     public void createMyGame() {
-        root.setStyle("-fx-background-color: #021C1E");
+        root.setStyle("-fx-background-color: #021C1E"); //Hintergrundfarbe
         player1 = new Player("Player 1", 10);
         player2 = new Player("Player 2", 10);
 
@@ -46,7 +46,7 @@ public class Game {
         Board player2PlacingBoard = player2.getPlacingBoard();
         Board player2AttackingBoard = player2.getAttackingBoard();
 
-        StackPane coverBoard1 = coveredBoard(player1.getPlacingBoard());
+        StackPane coverBoard1 = coveredBoard(player1.getPlacingBoard()); //StackPane dafür, dass der Gegner nicht sieht, wo du die Schiffe plazierst
         StackPane coverBoard2 = coveredBoard(player2.getPlacingBoard());
 
 
@@ -90,7 +90,7 @@ public class Game {
 
         HBox hbox2 = new HBox(20, coverBoard1, player2.getAttackingBoard(), player1Text);
         hbox2.setAlignment(Pos.TOP_CENTER);
-        hbox2.setPadding(new Insets(10, 100, 20, 50));
+        hbox2.setPadding(new Insets(10, 100, 20, 50)); //Padding ist der Zwischenraum, der Leer bleibt im Fenster
 
         root.setPrefSize(500, 750);
         root.setTop(hbox1);
@@ -111,13 +111,13 @@ public class Game {
         horizontal.setStyle("-fx-padding: 5; -fx-text-fill:#6FB98F; -fx-font-size: 12");
 
         VBox vBox = new VBox(10, vertical, horizontal);
-        ToggleGroup toggleGroup = new ToggleGroup();
+        ToggleGroup toggleGroup = new ToggleGroup(); //Sorgt dafür, dass Horizontal, Vertical Buttons nicht zusammenarbeiten können
 
         // adding the radio buttons to the toggle group
         vertical.setToggleGroup(toggleGroup);
         horizontal.setToggleGroup(toggleGroup);
 
-        //adding the listener ?
+        //adding the listener, wenn man zuhört, kann nicht eingegeriffen werden
         toggleGroup.selectedToggleProperty().addListener((observable, oldVal, newVal) -> activePlayer.setVertical(!newVal.toString().contains("Horizontal")));
         return vBox;
     }
@@ -132,7 +132,8 @@ public class Game {
         slider.setMax(5);
         slider.setValue(3);
         slider.setMajorTickUnit(1);//abstand zwischen tick Marks
-        slider.setShowTickLabels(true);
+        slider.setShowTickLabels(true); //Damit die Zahlen angezeigt werden
+        slider.setShowTickMarks(true);
 
         slider.setStyle(" -fx-padding: 10px;-fx-font-size: 15;-fx-text-fill:#6FB98F ");
 
@@ -190,7 +191,7 @@ public class Game {
         int col = cell.getx();
         int row = cell.gety();
 
-        /*Check to keep the ships inside the board*/
+        /*Check to keep the ships inside the board*/ //Sonst wirds Rot, wenn außerhalb der Border versucht wird zu platzieren
         if (row + ship.getShipSize() > player.getPlacingBoard().getHEIGHT() && ship.isVertical() ||
                 (col + ship.getShipSize() > player.getPlacingBoard().getHEIGHT() && !ship.isVertical())) {
             return false;
@@ -224,7 +225,7 @@ public class Game {
         return new Ship(shipSize, vertical);
     }
 
-    Ship createShipForPlayer(Player player, int shipSize, boolean vertical) {
+    Ship createShipForPlayer(Player player, int shipSize, boolean vertical) { //Button wird auf Vertical gesetzt
         Ship ship = new Ship(shipSize, vertical);
         player.getShips().add(ship);
         return ship;
@@ -259,7 +260,7 @@ public class Game {
 
     /**
      * Method that gets called when a player the attacking board of the second player
-     * if the cell is occupied the cell will be black otherwise cell will be gold
+     * if the cell is occupied the cell will be gold otherwise cell will be blue
      * and the corresponding ship that contains this cell will be fetched from this
      * player ships!
      */
