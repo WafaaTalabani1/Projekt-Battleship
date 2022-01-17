@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 public class Game {
 
-    private final BorderPane root = new BorderPane(); //Layoutklasse
+    private final BorderPane root = new BorderPane(); //Layoutklasse > evt Scrollpane
     private final Stage primaryStage;
     private Player player1;
     private Player player2;
