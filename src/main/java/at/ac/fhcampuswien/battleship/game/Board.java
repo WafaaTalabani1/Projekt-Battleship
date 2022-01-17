@@ -24,11 +24,11 @@ import java.util.Objects;
         //giving the board shadow effect
         this.setStyle("-fx-effect: dropshadow(three-pass-box, chartreuse, 20, 0, 0, 15);"); //shadow vom Spielfeld
         initializeImageView(); //Methode wird aufgerufen von weiter unten
-        for (int y = 0; y < HEIGHT; y++) {
-            HBox row = new HBox(); //HBox = Horizontale Boxen
+        for (int y = 0; y < HEIGHT; y++) { //Erstellung des Spielfelds
+            HBox row = new HBox(); //HBox = Horizontale Boxen, für jede neue Reihe neue HBOX Reihe
             for (int x = 0; x < WIDTH; x++) {
-                BoardCell c = new BoardCell(x, y, this);
-                row.getChildren().add(c);
+                BoardCell c = new BoardCell(x, y, this); //Für jedes x, y neue BoardCell
+                row.getChildren().add(c); //Neue Zellen werden immer hinzugefügt
             }
             rows.getChildren().add(row);
         }
@@ -37,10 +37,10 @@ import java.util.Objects;
     }
 
     private void initializeImageView(){
-        wave1 = new Image("file:src/main/resources/image/wave.jpg");
-        imageView1 = new ImageView(wave1);
-        imageView1.setVisible(false);
-        imageView1.setStyle("-fx-effect: dropshadow(three-pass-box, chocolate, 30, 0, 0, 15);");
+        wave1 = new Image("file:src/main/resources/image/wave.jpg"); //Der Pfad vom Bild , Initialisierung vom Bild
+        imageView1 = new ImageView(wave1); //Initialisierung mit neuem ImageView Objekt wo wir wave1 aufrufen
+        imageView1.setVisible(false); //Bild soll nicht direkt sichtbar sein deshalb "false"
+        imageView1.setStyle("-fx-effect: dropshadow(three-pass-box, chocolate, 30, 0, 0, 15);"); //Der Schatten vom Bild hat "chocolate" Farbe
     }
 
     BoardCell getCell(int x, int y) {                //auf einzelne Zellen zugreifen
@@ -49,7 +49,7 @@ import java.util.Objects;
     }
 
     boolean isValidPoint(double x, double y){
-        return x >= 0 && x < HEIGHT && y >= 0 && y < WIDTH;
+        return x >= 0 && x < HEIGHT && y >= 0 && y < WIDTH; //Gültige Punkte sind nur innerhalb des Spielfelds möglich
     }
 
     int getHEIGHT(){
@@ -64,9 +64,9 @@ import java.util.Objects;
         return imageView1;
     }
 
-    void setImageVisibility(boolean visibility){ //Damit Bild nicht direkt angezeigt wird, erst später dann
+    void setImageVisibility(boolean visibility){ //Bild wird hier sichtbar gemacht
         imageView1.setVisible(visibility);
-        covered = visibility;
+        covered = visibility; //Wenn visability aufgerufen ist --> covered
     }
 
     boolean isCovered() {
