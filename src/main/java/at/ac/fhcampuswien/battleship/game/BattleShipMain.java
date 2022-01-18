@@ -22,18 +22,18 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class BattleShipMain extends Application {
-    private Stage primaryStage; //BatleShipMain ist Subklasse der Application
+public class BattleShipMain extends Application { //BattleShipMain ist Subklasse der Application
+    private Stage primaryStage;
 
     public void start(Stage primaryStage) {
         Scene scene = new Scene(createContent());
         this.primaryStage = primaryStage;
 
-        primaryStage.setTitle("Battleship");
-        primaryStage.getIcons().add(new Image("file:src/main/resources/image/img_4.png"));
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.show();
+        primaryStage.setTitle("Battleship"); //Titel des Spiels
+        primaryStage.getIcons().add(new Image("file:src/main/resources/image/img_4.png")); //Das Icon des Spiels
+        primaryStage.setScene(scene); // -> "scene" wird gesetzt durch "setScene" Funktion, das css stylesheet gehört zum Styling der "scene"
+        primaryStage.setResizable(false); // Das Fenster von der Höhe & Breite nicht veränderbar
+        primaryStage.show(); //Damit sich das Fenster öffnen müssen wir unser PrimaryStage mit "show" aufrufen
 
 
 
@@ -63,32 +63,32 @@ public class BattleShipMain extends Application {
     }*/
     }
 
-    private Parent createContent() {
-        Pane gameMenu = new Pane();
-        gameMenu.setPrefSize(800, 750);
+    private Parent createContent() { //Methode createContent von Parent
+        Pane gameMenu = new Pane(); //Erstellen ein UI Element
+        gameMenu.setPrefSize(800, 750); //Höhe & Breite des Menu-Fenster
 
-        Image bkimage = new Image("file:src/main/resources/image/battleship1.png");
+        Image bkimage = new Image("file:src/main/resources/image/battleship1.png"); //Hintergrund des Menus
         ImageView mv = new ImageView(bkimage);
-        mv.setFitHeight(750);
+        mv.setFitHeight(750); //Höhe & Breite des Bildes
         mv.setFitWidth(800);
 
 
         gameMenu.getChildren().addAll(mv);
 
-        Title title = new Title("Battleship");
-        title.setTranslateX(200);
+        Title title = new Title("Battleship"); //Name im Menu
+        title.setTranslateX(200); //Positionierung der Überschrift vom Menu
         title.setTranslateY(150);
 
-        VBox box = new VBox(
+        VBox box = new VBox( //VerticalBox wird erstellt
 
                 5,
-                new MenuItem("START GAME", (() -> {
-                    Game game = new Game(primaryStage);
-                    game.createMyGame();
+                new MenuItem("START GAME", (() -> { //StartGame Button
+                    Game game = new Game(primaryStage); //PrimaryStage nötig damit sich Spielfenster öffnet
+                    game.createMyGame(); //Game wird erstellt
                     Scene scene1 = new Scene(game.getRoot());
                     primaryStage.setScene(scene1);
 
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION); //Informationsfenster bevor das Spiel los geht
                     alert.setTitle("Battleships basic rules");
                     alert.setHeaderText(" -ships can be placed next to each others but cant overlap \n -every player has 10 ships ");
                     alert.setContentText("Place your 10 ships at the board then try to find enemy's");
