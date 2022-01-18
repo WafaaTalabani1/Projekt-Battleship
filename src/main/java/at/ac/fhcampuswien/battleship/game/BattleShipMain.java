@@ -73,7 +73,7 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
         mv.setFitWidth(800);
 
 
-        gameMenu.getChildren().addAll(mv);
+        gameMenu.getChildren().addAll(mv); //Bild zum Hintergrund machen
 
         Title title = new Title("Battleship"); //Name im Menu
         title.setTranslateX(200); //Positionierung der Überschrift vom Menu
@@ -95,40 +95,40 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
                     alert.showAndWait();
                 })),
 
-                new MenuItem("Exit Game", () ->{
+                new MenuItem("Exit Game", () ->{  //Exit Game Button
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Exit Game ");
                     alert.setHeaderText("You're about to exit!");
                     alert.setContentText("Are you sure you want to do this?");
 
-                    if (alert.showAndWait().get() == ButtonType.OK) {
+                    if (alert.showAndWait().get() == ButtonType.OK) { //Wenn man OK drückt
                         System.out.println(" Exit game successfully, bye ");
-                        primaryStage.close();
+                        primaryStage.close(); //schließt sich das Game
                     }
                 }));
 
 
         // box.setBackground(new Background(new BackgroundFill(Color.web("blue",0.6),null, null)));
-        box.setTranslateX(200);
+        box.setTranslateX(200); //VBOX mit "Start" "Exit Game" mittig platzieren
         box.setTranslateY(500);
 
-        gameMenu.getChildren().addAll(title, box);
+        gameMenu.getChildren().addAll(title, box); //"title" & "box" zum gameMenu adden und ausgeben mit return
         return gameMenu;
     }
 
-    private static class Title extends StackPane {
+    private static class Title extends StackPane { //Layout vom StackPane
         public Title(String name) {
-            Rectangle bg = new Rectangle(350, 100);
-            bg.setStroke(Color.WHITE);
-            bg.setStrokeWidth(4);
-            bg.setFill(null);
+            Rectangle bg = new Rectangle(350, 120); //Rechteck erstellen um den Titelnamen
+            bg.setStroke(Color.WHITE); //Farbe des Rahmens
+            bg.setStrokeWidth(4); //Dicke des Rahmens
+            bg.setFill(null); //Keine Füllung
 
             Text text = new Text(name);
-            text.setFill(Color.WHITE);
+            text.setFill(Color.WHITE); //Farbe des Texts im Rectangle
             text.setFont(Font.font("Tw Cen MT Condensed", FontWeight.SEMI_BOLD, 100));
 
-            setAlignment(Pos.CENTER);
-            getChildren().addAll(bg, text);
+            setAlignment(Pos.CENTER); //Im Zentrum positioniert
+            getChildren().addAll(bg, text); //Rahmen & Überschrift hinzufügen damit sichtbar ist
         }
     }
 
@@ -142,14 +142,15 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
                     new Stop(1.0, Color.BLACK)
             );
 
-            Rectangle bg = new Rectangle(250, 30);// background
-            bg.setOpacity(0.4);
+            Rectangle bg = new Rectangle(250, 30);// Rectangle von StartGame & Exit Game
+            bg.setOpacity(0.4); //Deckkraft der Rechtecke
 
 
             Text text = new Text(name);
-            text.setFont(Font.font(30.0));
+            text.setFont(Font.font(30.0)); //Schriftgröße der Menu-Buttons
             text.fillProperty().bind(
                     Bindings.when(hoverProperty()).then(Color.WHITE).otherwise(Color.GRAY));
+                    //Wenn man über Button hovered --> weiß, sonst grau
 
 
             setOnMouseClicked(e -> action.run());
