@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff05377f-c940-4e79-b527-f084f213fdd0" name="Changes" comment="Spielregeln im Alert hinzugefügt mit den Anzahl der Schiffen">
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/Game.java" afterDir="false" />
+    <list default="true" id="ff05377f-c940-4e79-b527-f084f213fdd0" name="Changes" comment="In Konsole steht jetzt, wenn ein Schiff versenkt wurde">
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/BattleShipMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/BattleShipMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642599743884</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="In Konsole steht jetzt, wenn ein Schiff versenkt wurde">
+      <created>1642600550062</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642600550062</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,7 +343,8 @@
     <MESSAGE value="MenuItem" />
     <MESSAGE value="Kommentare hinzugefügt." />
     <MESSAGE value="Spielregeln im Alert hinzugefügt mit den Anzahl der Schiffen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spielregeln im Alert hinzugefügt mit den Anzahl der Schiffen" />
+    <MESSAGE value="In Konsole steht jetzt, wenn ein Schiff versenkt wurde" />
+    <option name="LAST_COMMIT_MESSAGE" value="In Konsole steht jetzt, wenn ein Schiff versenkt wurde" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt_battleshp$BattleShipMain.ic" NAME="BattleShipMain Coverage Results" MODIFIED="1640718754753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
