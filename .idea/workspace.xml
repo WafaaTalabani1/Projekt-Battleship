@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff05377f-c940-4e79-b527-f084f213fdd0" name="Changes" comment="Kommentare hinzugefügt.">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/at/ac/fhcampuswien/battleship/game/BattleShipMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/at/ac/fhcampuswien/battleship/game/BattleShipMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/BattleShipMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/BattleShipMain.java" afterDir="false" />
+    <list default="true" id="ff05377f-c940-4e79-b527-f084f213fdd0" name="Changes" comment="Spielregeln im Alert hinzugefügt mit den Anzahl der Schiffen">
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/battleship/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642520172107</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Spielregeln im Alert hinzugefügt mit den Anzahl der Schiffen">
+      <created>1642599743884</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642599743884</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,7 +335,8 @@
     <MESSAGE value="Kommentare hinzugefügt" />
     <MESSAGE value="MenuItem" />
     <MESSAGE value="Kommentare hinzugefügt." />
-    <option name="LAST_COMMIT_MESSAGE" value="Kommentare hinzugefügt." />
+    <MESSAGE value="Spielregeln im Alert hinzugefügt mit den Anzahl der Schiffen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spielregeln im Alert hinzugefügt mit den Anzahl der Schiffen" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt_battleshp$BattleShipMain.ic" NAME="BattleShipMain Coverage Results" MODIFIED="1640718754753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -295,6 +295,7 @@ public class Game {
      */
     private void shipDestroyed(Player player, Ship ship) {
         player.getShips().remove(ship);
+        System.out.println("You destroyed a ship!");
         if (player.getShips().size() == 0) {
             gameOver(player);
         }
