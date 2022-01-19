@@ -34,8 +34,6 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
         primaryStage.setScene(scene); // -> "scene" wird gesetzt durch "setScene" Funktion, das css stylesheet gehört zum Styling der "scene"
         primaryStage.setResizable(false); // Das Fenster von der Höhe & Breite nicht veränderbar
         primaryStage.show(); //Damit sich das Fenster öffnen müssen wir unser PrimaryStage mit "show" aufrufen
-
-
     }
 
     private Parent createContent() { //Methode createContent von Parent
@@ -51,8 +49,8 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
         gameMenu.getChildren().addAll(mv); //Bild zum Hintergrund machen
 
         Title title = new Title("Battleship"); //Name im Menu
-        title.setTranslateX(200); //Positionierung der Überschrift vom Menu
-        title.setTranslateY(150);
+        title.setTranslateX(225); //Positionierung der Überschrift vom Menu
+        title.setTranslateY(110);
 
         VBox box = new VBox( //VerticalBox wird erstellt
 
@@ -64,13 +62,13 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
                     primaryStage.setScene(scene1);
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION); //Informationsfenster bevor das Spiel los geht
-                    alert.setTitle("Battleships basic rules");
+                    alert.setTitle("Battleships Basic Rules");
                     alert.setHeaderText(" - Ships can be placed next to each others but cant overlap \n - Every player has 10 ships \n - Everytime you hit a part of enemy's ship, you get one more turn");
-                    alert.setContentText("Place your 10 ships at the board then try to find enemy's \n - Place 1 Battleship (5 blocks), 2 Cruiser (4 blocks), 3 Destroyer (3 blocks), 4 Submarines (2 blocks)");
+                    alert.setContentText("Place your 10 ships at the board then try to find enemy's \n - Place 1 Battleship (5 blocks), 2 Cruiser (4 blocks), 3 Destroyer (3 blocks), \n   4 Submarines (2 blocks)");
                     alert.showAndWait();
                 })),
 
-                new MenuItem("Exit Game", () ->{  //Exit Game Button
+                new MenuItem("EXIT GAME", () ->{  //Exit Game Button
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Exit Game ");
                     alert.setHeaderText("You're about to exit!");
@@ -84,8 +82,8 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
 
 
         // box.setBackground(new Background(new BackgroundFill(Color.web("blue",0.6),null, null)));
-        box.setTranslateX(200); //VBOX mit "Start" "Exit Game" mittig platzieren
-        box.setTranslateY(500);
+        box.setTranslateX(280); //VBOX mit "Start" "Exit Game" mittig platzieren
+        box.setTranslateY(400);
 
         gameMenu.getChildren().addAll(title, box); //"title" & "box" zum gameMenu adden und ausgeben mit return
         return gameMenu;
@@ -107,22 +105,17 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
         }
     }
 
-
     private static class MenuItem extends StackPane {
         public MenuItem(String name, Runnable action) {
 
-
-
             Rectangle bg = new Rectangle(250, 30);// Rectangle von StartGame & Exit Game
             bg.setOpacity(0.4); //Deckkraft der Rechtecke
-
 
             Text text = new Text(name);
             text.setFont(Font.font(30.0)); //Schriftgröße der Menu-Buttons
             text.fillProperty().bind(
                     Bindings.when(hoverProperty()).then(Color.WHITE).otherwise(Color.GRAY));
                     //Wenn man über Button hovered --> weiß, sonst grau
-
 
             setOnMouseClicked(e -> action.run());
 
@@ -131,7 +124,6 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
             setAlignment(Pos.CENTER);
 
             getChildren().addAll(bg, text);
-
 
         }
     }
