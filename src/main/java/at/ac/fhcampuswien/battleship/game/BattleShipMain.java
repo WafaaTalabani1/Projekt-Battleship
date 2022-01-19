@@ -112,10 +112,6 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
         public MenuItem(String name, Runnable action) {
 
 
-            LinearGradient gradient = new LinearGradient(0, 0.5, 1, 0.5, true, CycleMethod.NO_CYCLE,
-                    new Stop(0.1, Color.DARKORANGE),
-                    new Stop(1.0, Color.BLACK)
-            );
 
             Rectangle bg = new Rectangle(250, 30);// Rectangle von StartGame & Exit Game
             bg.setOpacity(0.4); //Deckkraft der Rechtecke
@@ -131,8 +127,6 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
             setOnMouseClicked(e -> action.run());
 
             setOnMousePressed(e -> bg.setFill(Color.WHITE));
-
-            setOnMouseReleased(event -> bg.setFill(gradient));
 
             setAlignment(Pos.CENTER);
 

@@ -112,6 +112,7 @@ public class Game {
 
         VBox vBox = new VBox(10, vertical, horizontal);
         ToggleGroup toggleGroup = new ToggleGroup(); //Sorgt dafür, dass Horizontal, Vertical Buttons nicht zusammenarbeiten können
+        
 
         // adding the radio buttons to the toggle group
         vertical.setToggleGroup(toggleGroup);
@@ -174,6 +175,8 @@ public class Game {
 
         return slider;
     }
+
+
 
 
     private StackPane coveredBoard(Board boardToCover) {
