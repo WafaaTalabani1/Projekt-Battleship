@@ -268,6 +268,8 @@ public class Game {
         cell.setWasShot(true);
         if (!cell.isOccupied()) {
             cell.setFill(Color.CORNFLOWERBLUE);
+            System.out.println("No ship got hit.");
+
             return false;
         } else {
             for (Ship ship : player.getShips()) {
@@ -275,6 +277,7 @@ public class Game {
                     if (currentCell.equals(cell)) {
                         cell.setFill(Color.GOLDENROD);
                         ship.hit();
+                        System.out.println("Part of ship got hit!");
                         if (!ship.isAlive()) {
                             shipDestroyed(player, ship);
                         }
