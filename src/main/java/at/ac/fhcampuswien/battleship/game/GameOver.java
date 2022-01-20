@@ -26,11 +26,10 @@ class GameOver extends Stage {
     GameOver(String winner, Stage primaryStage){
         scene.getStylesheets().add("file:src/main/resources/style/style.css");// CSS File is used for the styling
 
-        /*Hiermit wird ermöglicht, dass wenn das Gameover Fenster aufgeht,
-         das Spiel quasi einfriert bis man eine Entscheidung trifft*/
+        /*das Fenster vom Gameover geht auf auf mein Spielfenster*/
         this.initModality(Modality.APPLICATION_MODAL);
 
-        this.initStyle(StageStyle.UNDECORATED);// Hiermit verschwindet die Toolbar oben
+        this.initStyle(StageStyle.UNDECORATED);
         winnerTxt = new Text(winner + " WINS");
         this.primaryStage = primaryStage;
     }

@@ -74,8 +74,9 @@ public class Game {
         }
 
 
-        hbox = new HBox(60, shipSizeSlider(), radioButtons());
+        hbox = new HBox(20, shipSizeSlider(), radioButtons());
         hbox.setAlignment(Pos.CENTER);
+        hbox.setPadding(new Insets(5,100,5,50));
         root.setCenter(hbox);
 
         player1Text = new Text(player1.getName());
@@ -86,7 +87,7 @@ public class Game {
 
         HBox hbox1 = new HBox(20, coverBoard2, player1.getAttackingBoard(), player2Text);
         hbox1.setAlignment(Pos.TOP_CENTER);
-        hbox1.setPadding(new Insets(50, 100, 20, 50));
+        hbox1.setPadding(new Insets(30, 100, 20, 50));
 
         HBox hbox2 = new HBox(20, coverBoard1, player2.getAttackingBoard(), player1Text);
         hbox2.setAlignment(Pos.TOP_CENTER);

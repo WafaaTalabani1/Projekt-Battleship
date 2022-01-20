@@ -83,7 +83,7 @@ class BoardCell extends Rectangle {
                         if (game.canPlaceShip__(currentPlayer,ship, currentBoardCell)){//wenn das schiff in diesem platz passt ,darf diesem schiff platziert werden
                             game.placeShipForPlayer(currentPlayer,ship, currentBoardCell);
                         }
-                        if (currentPlayer.getShipsToPlace() == 0){//
+                        if (currentPlayer.getShipsToPlace() == 0){
                             if (secondPlayer.getShipsToPlace() == 0){
                                 game.removeButtons();
                             }
