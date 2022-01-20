@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 group 'at.ac.fhcampuswien'
@@ -21,6 +21,6 @@ targetCompatibility = '11'
 mainClassName = 'at.ac.fhcampuswien.battleship.game.BattleShipMain'
 
 javafx {
-    version = '11.0.2'
+    version = '17'
     modules = ['javafx.controls', 'javafx.fxml', 'javafx.web']
 }
