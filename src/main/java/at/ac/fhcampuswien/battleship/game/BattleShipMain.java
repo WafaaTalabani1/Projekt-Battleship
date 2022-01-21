@@ -64,7 +64,7 @@ public class BattleShipMain extends Application { //BattleShipMain ist Subklasse
                     Alert alert = new Alert(Alert.AlertType.INFORMATION); //Informationsfenster bevor das Spiel los geht
                     alert.setTitle("Battleships Basic Rules");
                     alert.setHeaderText(" - Ships can be placed next to each others but cant overlap \n - Every player has 10 ships \n - Everytime you hit a part of enemy's ship, you get one more turn");
-                    alert.setContentText("Place your 10 ships at the board then try to find enemy's \n - Place 1 Battleship (5 blocks), 2 Cruiser (4 blocks), 3 Destroyer (3 blocks), \n   4 Submarines (2 blocks)");
+                    alert.setContentText("Place your 10 ships at the board then try to find enemy's \n - The size of the ships are freely selectable");
                     alert.showAndWait();
                 })),
 
