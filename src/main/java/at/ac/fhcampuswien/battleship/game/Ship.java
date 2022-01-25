@@ -5,13 +5,11 @@ import javafx.scene.Parent;
 import java.util.ArrayList;
 
 class Ship extends Parent {
-    /*length of ship*/
-    private final int shipSize;
-    /*orientation of ship*/
-    private final boolean vertical;
-    /*list that holds the cells on which the ship exists*/
-    private final ArrayList<BoardCell> shipBoardCells;
-    private int health;
+
+    private final int shipSize;//Länger der Ships
+    private final boolean vertical;//wie Ship plaziert wird
+    private final ArrayList<BoardCell> shipBoardCells;//Liste, die die Cell beinhaltet, wo die Ships plaziert wurden
+    private int health;//Health vom Ship
 
     Ship(int shipSize, boolean vertical) {
         this.shipSize = shipSize;
@@ -34,7 +32,7 @@ class Ship extends Parent {
 
     void hit() {
         health--;
-    }
+    } 
 
     boolean isAlive() {
         return health > 0;
